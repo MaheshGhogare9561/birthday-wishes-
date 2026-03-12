@@ -318,6 +318,7 @@ function GalleryPage({ name }){
       {/* title — fades in after all cards appear */}
       <div style={{
         textAlign:"center", zIndex:10, pointerEvents:"none", padding:"0 16px",
+        marginBottom:"24px",
         opacity:0, animation:`fadeIn 1.2s ${titleDelay}s forwards`,
       }}>
         <h2 style={{
