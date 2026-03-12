@@ -369,6 +369,7 @@ function GalleryPage({ name }){
       {/* bottom quote */}
       <div style={{
         textAlign:"center", padding:"0 24px",
+        marginTop:`${radius}px`,
         opacity:0, animation:`fadeIn 1.2s ${titleDelay + 0.4}s forwards`,
       }}>
         <p style={{
