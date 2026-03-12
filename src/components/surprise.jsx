@@ -318,7 +318,6 @@ function GalleryPage({ name }){
       {/* title — fades in after all cards appear */}
       <div style={{
         textAlign:"center", zIndex:10, pointerEvents:"none", padding:"0 16px",
-        marginBottom:"32px",
         opacity:0, animation:`fadeIn 1.2s ${titleDelay}s forwards`,
       }}>
         <h2 style={{
@@ -369,7 +368,7 @@ function GalleryPage({ name }){
       {/* bottom quote */}
       <div style={{
         textAlign:"center", padding:"0 24px",
-        marginTop:`${radius}px`,
+        marginTop:`${Math.round(cardSize * 0.3)}px`,
         opacity:0, animation:`fadeIn 1.2s ${titleDelay + 0.4}s forwards`,
       }}>
         <p style={{
