@@ -284,7 +284,7 @@ function MessagePage({ name, onNext }){
    PAGE 3 — 3D Photo Carousel
    ═══════════════════════════════════════════ */
 function GalleryPage({ name }){
-  const photos = Array.from({length:9}).map((_,i)=>`photos/photo${i+1}.jpeg`);
+  const photos = Array.from({length:9}).map((_,i)=>`photos/photo${i+1}.webp`);
 
   // Responsive sizing — computed once on mount
   const vw = window.innerWidth;
@@ -340,7 +340,7 @@ function GalleryPage({ name }){
                 opacity:0,
                 animation:`popIn 0.7s ${i * 0.55}s ease-out forwards`,
               }}>
-                <img src={src} alt={`photo ${i+1}`} style={{
+                <img src={src} alt={`photo ${i+1}`} decoding="async" loading="eager" style={{
                   width:"100%", height:"100%", objectFit:"cover",
                   borderRadius:"12px", border:"3px solid rgba(255,255,255,0.85)",
                   boxShadow:"0 8px 32px rgba(0,0,0,0.25)", display:"block",
