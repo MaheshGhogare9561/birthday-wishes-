@@ -284,7 +284,7 @@ function MessagePage({ name, onNext }){
    PAGE 3 — 3D Photo Carousel
    ═══════════════════════════════════════════ */
 function GalleryPage({ name }){
-  const photos = Array.from({length:10}).map((_,i)=>`assets/photos/photo${i+1}.jpg`);
+  const photos = Array.from({length:3}).map((_,i)=>`photos/photo${i+1}.jpg`);
 
   // Responsive sizing — computed once on mount
   const vw = window.innerWidth;
@@ -331,7 +331,7 @@ function GalleryPage({ name }){
             /* outer div: sets the 3D slot — no animation so it doesn't conflict */
             <div key={i} style={{
               position:"absolute", top:0, left:0, width:"100%", height:"100%",
-              transform:`rotateY(${i * 36}deg) translateZ(${radius}px)`,
+              transform:`rotateY(${i * (360 / photos.length)}deg) translateZ(${radius}px)`,
             }}>
               {/* inner div: only scale + opacity pop-in; padding creates gap between cards */}
               <div style={{
