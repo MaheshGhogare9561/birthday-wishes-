@@ -307,7 +307,7 @@ function GalleryPage({ name }){
         display:"flex", gap:"12px", fontSize:"clamp(1.4rem, 4vw, 2rem)",
         opacity:0, animation:`fadeIn 0.8s 0.2s forwards`,
       }}>
-        {"🎈🎂🎉🎁🎀🎊".split("").map((e,i)=>(
+        {["🎈","🎂","🎉","🎁","🎀","🎊"].map((e,i)=>(
           <span key={i} style={{
             display:"inline-block",
             animation:`gentleBounce ${1.2 + i*0.15}s ${i*0.1}s ease-in-out infinite`,
@@ -318,6 +318,7 @@ function GalleryPage({ name }){
       {/* title — fades in after all cards appear */}
       <div style={{
         textAlign:"center", zIndex:10, pointerEvents:"none", padding:"0 16px",
+        marginBottom:"32px",
         opacity:0, animation:`fadeIn 1.2s ${titleDelay}s forwards`,
       }}>
         <h2 style={{
@@ -384,8 +385,8 @@ function GalleryPage({ name }){
         display:"flex", gap:"10px", fontSize:"clamp(1.2rem, 3.5vw, 1.7rem)",
         opacity:0, animation:`fadeIn 0.8s ${titleDelay + 0.7}s forwards`,
       }}>
-        {"💗💜💗💜💗".split("💗").filter(Boolean).map((_,i)=>(
-          <span key={i} style={{ animation:`pulse 1.8s ${i*0.3}s ease-in-out infinite` }}>💗</span>
+        {["💗","💜","💗","💜","💗"].map((e,i)=>(
+          <span key={i} style={{ animation:`pulse 1.8s ${i*0.3}s ease-in-out infinite` }}>{e}</span>
         ))}
       </div>
 
