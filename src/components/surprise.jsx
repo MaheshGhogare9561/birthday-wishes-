@@ -161,10 +161,11 @@ function WelcomePage({ onNext }){
    ═══════════════════════════════════════════ */
 function MessagePage({ name, onNext }){
   const lines = [
-    "Do you know what makes today extra special?",
-    "It's your birthday! 🎉",
-    `Today, I wish you a year filled with laughter,\nlove, and unforgettable moments, ${name}.`,
-    "You deserve every happiness in the world. 💖",
+    `${name}... today is all about you. 🌸`,
+    "Another year of you being absolutely amazing —",
+    "your smile, your strength, your beautiful heart.",
+    `May this year bring you everything you deserve\nand more, because you are so worth it. 💖`,
+    "Wishing you a day as special as you are. 🎂✨",
   ];
   const { display, done } = useTypewriter(lines, 28, 450);
   const [confetti, setConfetti] = useState([]);
@@ -297,9 +298,22 @@ function GalleryPage({ name }){
   return (
     <div style={{
       minHeight:"100svh", display:"flex", flexDirection:"column",
-      alignItems:"center", justifyContent:"center", gap:"60px",
-      position:"relative", zIndex:1, overflow:"hidden",
+      alignItems:"center", justifyContent:"center", gap:"28px",
+      position:"relative", zIndex:1, overflow:"hidden", padding:"24px 0",
     }}>
+
+      {/* top decorative row */}
+      <div style={{
+        display:"flex", gap:"12px", fontSize:"clamp(1.4rem, 4vw, 2rem)",
+        opacity:0, animation:`fadeIn 0.8s 0.2s forwards`,
+      }}>
+        {"🎈🎂🎉🎁🎀🎊".split("").map((e,i)=>(
+          <span key={i} style={{
+            display:"inline-block",
+            animation:`gentleBounce ${1.2 + i*0.15}s ${i*0.1}s ease-in-out infinite`,
+          }}>{e}</span>
+        ))}
+      </div>
 
       {/* title — fades in after all cards appear */}
       <div style={{
@@ -308,11 +322,11 @@ function GalleryPage({ name }){
       }}>
         <h2 style={{
           fontFamily:"'Brush Script MT', 'Segoe Script', cursive",
-          fontSize:"clamp(1.8rem, 7vw, 3.5rem)",
+          fontSize:"clamp(2.6rem, 10vw, 5rem)",
           background:"linear-gradient(135deg, #f472b6, #7c3aed, #38bdf8)",
           WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
-          margin:0, lineHeight:1.3,
-          filter:"drop-shadow(0 2px 10px rgba(124,58,237,0.3))",
+          margin:0, lineHeight:1.2,
+          filter:"drop-shadow(0 2px 12px rgba(124,58,237,0.35))",
         }}>
           Happy Birthday {name}
         </h2>
@@ -349,6 +363,30 @@ function GalleryPage({ name }){
             </div>
           ))}
         </div>
+      </div>
+
+      {/* bottom quote */}
+      <div style={{
+        textAlign:"center", padding:"0 24px",
+        opacity:0, animation:`fadeIn 1.2s ${titleDelay + 0.4}s forwards`,
+      }}>
+        <p style={{
+          fontSize:"clamp(0.95rem, 3.5vw, 1.2rem)", color:"rgba(255,255,255,0.9)",
+          fontStyle:"italic", margin:0, lineHeight:1.6,
+          textShadow:"0 1px 8px rgba(124,58,237,0.4)",
+        }}>
+          "Every moment with you is a memory worth keeping 💗"
+        </p>
+      </div>
+
+      {/* bottom decorative hearts */}
+      <div style={{
+        display:"flex", gap:"10px", fontSize:"clamp(1.2rem, 3.5vw, 1.7rem)",
+        opacity:0, animation:`fadeIn 0.8s ${titleDelay + 0.7}s forwards`,
+      }}>
+        {"💗💜💗💜💗".split("💗").filter(Boolean).map((_,i)=>(
+          <span key={i} style={{ animation:`pulse 1.8s ${i*0.3}s ease-in-out infinite` }}>💗</span>
+        ))}
       </div>
 
       <p style={{
