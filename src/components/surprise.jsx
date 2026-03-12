@@ -284,7 +284,7 @@ function MessagePage({ name, onNext }){
    PAGE 3 — 3D Photo Carousel
    ═══════════════════════════════════════════ */
 function GalleryPage({ name }){
-  const photos = Array.from({length:3}).map((_,i)=>`photos/photo${i+1}.jpg`);
+  const photos = Array.from({length:9}).map((_,i)=>`photos/photo${i+1}.jpeg`);
 
   // Responsive sizing — computed once on mount
   const vw = window.innerWidth;
